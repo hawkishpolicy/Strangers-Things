@@ -5,6 +5,7 @@ const Main = () => {
     return(
         <div id="main">
             <Navbar />
+            <Footer />
         </div>
     )
 }
