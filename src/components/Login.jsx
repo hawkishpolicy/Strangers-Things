@@ -21,6 +21,8 @@ const Login = () => {
             ></input>
             <button>Enter</button>
 
+            <h2>Forgot Password?</h2>
+
             <h2>New User?<span><Link id={"registerButton"} to={`/register`}>
         <button>Register Here</button>
       </Link></span></h2>
