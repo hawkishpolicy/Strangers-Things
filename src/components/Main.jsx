@@ -1,21 +1,25 @@
-import React from "react";
-import { Navbar, Footer, Posts } from "./";
+import React, {useState, useEffect} from "react";
+import { Navbar, Footer, PostsLists } from "./";
 import { getSrcInfo } from "../API-Adapter"
 
 const Main = () => {
-    // const getPosts = async () => {
-    //     try{
-    //     const postInfo = await getSrcInfo()
-    //     console.log(postInfo)
-    //     return postInfo
-    //     }catch(error){
-    //         console.error(error)
-    //     }
-    // }
+    const [posts, setPosts] = useState([]);
+
+    const getPosts = async () =>{
+        const allPosts = await getSrcInfo();
+        setPosts(allPosts);
+    }
+
+    useEffect(()=>{
+        getPosts();
+    }, [])
+
+    console.log(posts)
+
     return(
         <div id="main">
             <Navbar />
-            <Posts />
+            <PostsLists posts = {posts}/>
             <Footer />
         </div>
     )
