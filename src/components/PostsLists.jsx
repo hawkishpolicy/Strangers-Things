@@ -8,13 +8,21 @@ const PostsLists = (props) => {
             {
                 posts.map((post, idx) =>{
                     return(
+                        <div>
                         <h2 key = {idx} className = "title">
                            {post.title}
                         </h2>
+                        <ul>
+                            <li>{post.description}
+                            </li>
+                            <li>{post.location}</li>
+                            <li>{post.price}</li>
+                        </ul>
+                        </div>
                     )
                 })
             }
-            <h2>posts go here</h2>
+            
         </div>
     )
 }

@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from "react";
-import { Navbar, Footer, PostsLists } from "./";
+import { Navbar, Footer, PostsLists, Login } from "./";
 import { getSrcInfo } from "../API-Adapter"
 
 const Main = () => {
@@ -19,6 +19,7 @@ const Main = () => {
     return(
         <div id="main">
             <Navbar />
+            <Login/>
             <PostsLists posts = {posts}/>
             <Footer />
         </div>

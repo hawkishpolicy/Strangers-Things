@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { Main, PostsLists } from "./components";
+import { Main, PostsLists, Login } from "./components";
 import {
   createBrowserRouter,
   RouterProvider,
@@ -15,7 +15,8 @@ const router = createBrowserRouter(
   createRoutesFromElements(
     <>
       <Route path="/" element={<Main />} />
-      <Route path="/" element={<PostsLists/>} />
+      <Route path="/" element={<Login />} />
+      <Route path="/" element={<PostsLists />} />
     </>
   )
 );
