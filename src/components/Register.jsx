@@ -1,12 +1,10 @@
 import React from "react";
-import { Link } from "react-router-dom";
 
+const Register = () => {
 
-const Login = () => {
-
-    return (
+    return(
         <form>
-            <input
+        <input
             id={"userNameInput"}
             type={"text"}
             placeholder={"User Name"}
@@ -19,20 +17,17 @@ const Login = () => {
             min={"8"}
             required
             ></input>
+            <input id={"confirmPassword"}
+            type={"password"}
+            placeholder={"Confirm Password"}
+            min={"8"}
+            required
+            ></input>
             <button>Enter</button>
+            </form>
 
-            <h2>New User?<span><Link id={"registerButton"} to={`/register`}>
-        <button>Register Here</button>
-      </Link></span></h2>
-        
-
-
-        </form>
     )
 }
 
 
-
-
-
-export default Login
+export default Register
