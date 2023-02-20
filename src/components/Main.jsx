@@ -19,7 +19,6 @@ const Main = () => {
     return(
         <div id="main">
             <Navbar />
-            <Login/>
             <PostsLists posts = {posts}/>
             <Footer />
         </div>
