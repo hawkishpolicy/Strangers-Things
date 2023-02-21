@@ -18,7 +18,7 @@ const Navbar = () => {
     </div>
     <div id="navBar">
       <Link id={"homeLink"} to={'/Home'}>Home</Link>
-      <Link id={"postsLink"} to={'/PostsLists'}>Posts</Link>
+      {/* <Link id={"postsLink"} to={'/PostsLists'}>Posts</Link> */}
       <Link id={"loginLink"} to={`/login`}>Login
       </Link>
     </div>
