@@ -4,6 +4,7 @@ import { getSrcInfo } from "../API-Adapter"
 
 const Main = () => {
     const [posts, setPosts] = useState([]);
+    const [loggedIn, setLoggedIn] = useState('')
 
     const getPosts = async () =>{
         const allPosts = await getSrcInfo();
@@ -16,7 +17,7 @@ const Main = () => {
 
     return(
         <div id="main">
-            <Navbar />
+            <Navbar loggedIn={loggedIn} setLoggedIn={setLoggedIn}/>
             <PostsLists posts = {posts}/>
             <Footer />
         </div>

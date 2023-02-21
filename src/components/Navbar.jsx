@@ -4,7 +4,7 @@ import React from "react";
 
 import { Link } from "react-router-dom";
 
-const Navbar = () => {
+const Navbar = (props) => {
   return (
     <div id="navbar">
     <div>
@@ -19,8 +19,9 @@ const Navbar = () => {
     <div id="navBar">
       <Link id={"homeLink"} to={'/Home'}>Home</Link>
       {/* <Link id={"postsLink"} to={'/PostsLists'}>Posts</Link> */}
-      <Link id={"loginLink"} to={`/login`}>Login
-      </Link>
+      {props.loggedIn ? <Link id={"logoutLink"}>Log Out</Link> : 
+        <Link id={"loginLink"} to={`/login`}>Login</Link> 
+      }
     </div>
     </div>
   );

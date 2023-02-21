@@ -15,6 +15,7 @@ async function sendUserLogin(username, password) {
 
         setUsername('')
         setPassword('')
+        setLoggedIn(result.data.token)
     } catch(error) {
         console.log(error)
     }

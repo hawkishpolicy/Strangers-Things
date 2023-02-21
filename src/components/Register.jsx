@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { postUserInfo } from "../API-Adapter";
+import { Link } from "react-router-dom"
 
 const Register = () => {
     const[username, setUsername] = useState("");
@@ -10,8 +11,6 @@ const Register = () => {
    async function sendUserInfo(username, password){
        try{
         const result = await postUserInfo(username, password);
-        console.log(username, password);
-        console.log(result);
         setResponse(result);    //giving it to state so we can sent it to local storage?
 
         setUsername('');
@@ -68,7 +67,7 @@ const Register = () => {
                     }}
                     ></input>
 
-                    <button type="submit">Enter</button>
+                    <Link to={`/login`}><button id={"loginButton"} type="submit">Enter</button></Link>
             </form>
 
         </div>
