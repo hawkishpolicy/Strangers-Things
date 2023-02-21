@@ -1,6 +1,13 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { Main, PostsLists, Login, Register } from "./components";
+import {
+  Main,
+  PostsLists,
+  Login,
+  Register,
+  PasswordReset,
+  Home,
+} from "./components";
 import {
   createBrowserRouter,
   RouterProvider,
@@ -17,7 +24,10 @@ const router = createBrowserRouter(
       <Route path="/" element={<Main />} />
       <Route path="/login" element={<Login />} />
       <Route path="/register" element={<Register />} />
+      <Route path="/passwordReset" element={<PasswordReset />} />
       <Route path="/" element={<PostsLists />} />
+      <Route path="/home" element={<Home />} />
+      <Route path="/postlists" element={<PostsLists />} />
     </>
   )
 );

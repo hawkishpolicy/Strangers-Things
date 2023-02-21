@@ -3,7 +3,9 @@ import React from "react";
 const Register = () => {
 
     return(
-        <form>
+        <div id="registerPage">
+        
+        <form id="registerCard">
         <input
             id={"userNameInput"}
             type={"text"}
@@ -26,6 +28,7 @@ const Register = () => {
             <button>Enter</button>
             </form>
 
+            </div>
     )
 }
 
