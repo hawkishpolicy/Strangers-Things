@@ -1,57 +1,75 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import { postUserInfo } from "../API-Adapter";
 
 const Register = () => {
+    const[username, setUsername] = useState("");
+    const[password, setPassword] = useState("");
+    const[response, setResponse] = useState(""); //holds the api's response  
 
-    const userNameInput = document.getElementById('userNameInput')
-    const userPassword = document.getElementById('userPassword')
-    const confirmPassword = document.getElementById('confirmPassword')
 
-    function fetchUserInfo(){
-        console.log(userNameInput, userPassword)
-        const userInfo = fetch('https://strangers-things.herokuapp.com/api/2301-ftb-et-web-ft/users/register', {
-            method: "POST",
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({
-                user: {
-                username: userNameInput,
-                password: userPassword
-                }
-            })
-        }).then(response => response.json())
-        .then(result => {
-            console.log(result);
-        })
-        .catch(console.error);
+   async function sendUserInfo(username, password){
+       try{
+        console.log("username and password sent", username, password);
+        const result = await postUserInfo(username, password);
+
+        console.log(result);
+        setResponse(result.data);    //giving it to state so we can sent it to local storage?
+
+        setUsername('');
+        setPassword('');
+
+       } catch(error){
+        console.log(error);
+       }
     }
     
+    useEffect(() =>{
+        localStorage.setItem(response, response.token); // token is logging. we need key tho, username?
+    }, [response])
+
+
+
     return(
         <div id="registerPage">
         
-        <form id="registerCard">
-        <input
-            id={"userNameInput"}
-            type={"text"}
-            placeholder={"User Name"}
-            required
-            ></input>
-            <input
-            id={"userPassword"}
-            type={"password"}
-            placeholder={"Password"}
-            min={"8"}
-            required
-            ></input>
-            <input id={"confirmPassword"}
-            type={"password"}
-            placeholder={"Confirm Password"}
-            min={"8"}
-            required
-            ></input>
-            <button type="submit" id="registerEnter" onClick={() => userPassword === confirmPassword ?
-                fetchUserInfo() : alert("Passwords don't match") }
-            >Enter</button>
+            <form id="registerCard" 
+                onSubmit = {(event) => {
+                event.preventDefault();
+                sendUserInfo(username, password);
+            }}>
+
+                <input
+                    id={"userNameInput"}
+                    type={"text"}
+                    placeholder={"User Name"}
+                    value = {username}
+                    required
+                    onChange={(event)=>{
+                        setUsername(event.target.value);
+                        console.log(event.target.value)
+                    }}
+                    ></input>
+
+                    <input
+                    id={"userPassword"}
+                    type={"password"}
+                    placeholder={"Password"}
+                    min={"8"}
+                    required
+                    ></input>
+
+                    <input id={"confirmPassword"}
+                    type={"password"}
+                    placeholder={"Confirm Password"}
+                    min={"8"}
+                    required
+                    value = {password}
+                    onChange={(event)=>{
+                        setPassword(event.target.value)
+                    }}
+                    ></input>
+
+                    <button type="submit">Enter</button>
             </form>
 
         </div>
