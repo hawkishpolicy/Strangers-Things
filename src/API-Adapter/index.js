@@ -26,6 +26,7 @@ export const postUserInfo = async (username, password) =>{
                 }
             }),
         });
+        console.log(username, password)
 
         const result = await response.json();
         return result

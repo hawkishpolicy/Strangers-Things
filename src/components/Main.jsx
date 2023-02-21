@@ -14,8 +14,6 @@ const Main = () => {
         getPosts();
     }, [])
 
-    console.log(posts)
-
     return(
         <div id="main">
             <Navbar />

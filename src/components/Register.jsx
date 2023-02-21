@@ -9,11 +9,10 @@ const Register = () => {
 
    async function sendUserInfo(username, password){
        try{
-        console.log("username and password sent", username, password);
         const result = await postUserInfo(username, password);
-
+        console.log(username, password);
         console.log(result);
-        setResponse(result.data);    //giving it to state so we can sent it to local storage?
+        setResponse(result);    //giving it to state so we can sent it to local storage?
 
         setUsername('');
         setPassword('');
@@ -24,7 +23,7 @@ const Register = () => {
     }
     
     useEffect(() =>{
-        localStorage.setItem(response, response.token); // token is logging. we need key tho, username?
+        localStorage.setItem("token", response.token); 
     }, [response])
 
 
@@ -36,6 +35,7 @@ const Register = () => {
                 onSubmit = {(event) => {
                 event.preventDefault();
                 sendUserInfo(username, password);
+
             }}>
 
                 <input
@@ -46,7 +46,6 @@ const Register = () => {
                     required
                     onChange={(event)=>{
                         setUsername(event.target.value);
-                        console.log(event.target.value)
                     }}
                     ></input>
 
