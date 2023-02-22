@@ -68,10 +68,34 @@ export const getUserPosts = async () => {
                 Authorization: `Bearer ${localStorage.getItem("userToken")}`
             }
         })
-        console.log(response)
         const result = await response.json()
-        const userPosts = result.data.posts;
-        // return result
+        console.log(result)
+        return result
+    }catch(error){
+        console.error(error)
+    }
+}
+
+export const addPost = async (title, description, price) => {
+    try{
+        const response = await fetch(`${srcInfo}/posts`, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                Authorization: `Bearer ${localStorage.getItem("userToken")}`
+            },
+            body: JSON.stringify({
+                post: {
+                    title: title,
+                    description: description,
+                    price: price,
+                }
+            })
+        })
+        console.log(title,description,price)
+        const result = await response.json()
+        console.log(result)
+        return result
     }catch(error){
         console.error(error)
     }

@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from "react";
-import { Navbar, Footer, PostsLists } from "./";
+import { Navbar, Footer, PostsLists, PostForm } from "./";
 import { getUserPosts } from "../API-Adapter";
 
 
@@ -9,8 +9,8 @@ const Home =() => {
 
     const getPosts = async () =>{
         const allPosts = await getUserPosts();
-        console.log(allPosts)
-        setPosts(allPosts);
+        // console.log(allPosts.data.posts)
+        setPosts(allPosts.data.posts);
     }
 
     useEffect(()=>{
@@ -24,7 +24,7 @@ const Home =() => {
         <div id="homePage">
             <Navbar />
             <h1 className="welcomeUser">Welcome User!</h1>
-            {/* <PostsLists posts = {posts}/> */}
+            <PostsLists posts = {posts}/>
             <Footer />
 
         </div>

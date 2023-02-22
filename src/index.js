@@ -6,6 +6,7 @@ import {
   Login,
   Register,
   PasswordReset,
+  PostForm,
   Home,
 } from "./components";
 import {
@@ -28,6 +29,7 @@ const router = createBrowserRouter(
       <Route path="/register" element={<Register />} />
       <Route path="/passwordReset" element={<PasswordReset />} />
       <Route path="/PostsLists" element={<PostsLists />} />
+      <Route path="/CreatePost" element={<PostForm />} />
       <Route path="/home" element={<Home />} />
       
     </>
