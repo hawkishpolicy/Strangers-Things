@@ -58,3 +58,21 @@ export const postUserLogin = async (username, password) => {
     console.log(error);
   }
 };
+
+export const getUserPosts = async () => {
+    try{
+        const response = await fetch(`${srcInfo}/users/me`, {
+            method: "GET",
+            headers: {
+                "Content-Type": "application/json",
+                Authorization: `Bearer ${localStorage.getItem("userToken")}`
+            }
+        })
+        console.log(response)
+        const result = await response.json()
+        const userPosts = result.data.posts;
+        // return result
+    }catch(error){
+        console.error(error)
+    }
+}
