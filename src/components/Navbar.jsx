@@ -32,7 +32,7 @@ const Navbar = (props) => {
       {loggedIn ? 
       <>
         <Link id={"homeLink"} to={'/Home'}>Home</Link> 
-        <Link id={"logoutLink"} onClick= {Logout} >Log Out</Link> 
+        <button id={"logoutLink"} onClick= {Logout} >Log Out</button> 
       </>
       : <Link id={"loginLink"} to={`/login`}>Login</Link> 
       }

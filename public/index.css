@@ -40,9 +40,12 @@ body {
   font-weight: bold;
 }
 
-#logoutLink {
+#logoutLink { 
+  font-family:'Times New Roman', Times, serif;
   text-decoration: underline;
   color: white;
+  background-color: black;
+  border: none;
   font-size: x-large;
   font-weight: bold;
 }
