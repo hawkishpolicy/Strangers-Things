@@ -1,18 +1,19 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { postUserInfo } from "../API-Adapter";
-import { Link } from "react-router-dom"
+import { useNavigate } from "react-router-dom";
 
 const Register = () => {
     const[username, setUsername] = useState("");
     const[password, setPassword] = useState("");
-    const[response, setResponse] = useState(""); //holds the api's response  
+    
+    const navigate = useNavigate();
 
 
    async function sendUserInfo(username, password){
        try{
         const result = await postUserInfo(username, password);
-        setResponse(result);    //giving it to state so we can sent it to local storage?
-
+        // setResponse(result);    //giving it to state so we can sent it to local storage?
+        console.log(result);
         setUsername('');
         setPassword('');
 
@@ -21,9 +22,9 @@ const Register = () => {
        }
     }
     
-    useEffect(() =>{
-        localStorage.setItem("token", response.token); 
-    }, [response])
+    // useEffect(() =>{
+    //     localStorage.setItem("token", response.token); 
+    // }, [response])
 
 
 
@@ -32,9 +33,10 @@ const Register = () => {
         
             <form id="registerCard" 
                 onSubmit = {(event) => {
-                event.preventDefault();
-                sendUserInfo(username, password);
-
+                    console.log(username,password);
+                    event.preventDefault();
+                    sendUserInfo(username, password);
+                    navigate("/login");
             }}>
 
                 <input
@@ -67,7 +69,7 @@ const Register = () => {
                     }}
                     ></input>
 
-                    <Link to={`/login`}><button id={"loginButton"} type="submit">Enter</button></Link>
+                    <button id={"loginButton"} type="submit">Enter</button>
             </form>
 
         </div>

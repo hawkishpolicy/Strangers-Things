@@ -41,7 +41,7 @@ export const postUserLogin = async (username, password) => {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        Authorization: "Bearer TOKEN_STRING_HERE",
+        Authorization: `Bearer ${localStorage.getItem("userToken")}`,
       },
       body: JSON.stringify({
         user: {

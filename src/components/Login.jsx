@@ -1,5 +1,5 @@
 import React, { useState} from "react";
-import { Link, redirect } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { postUserLogin } from "../API-Adapter";
 import { useAppContext } from "./AppProvider";
 
@@ -10,18 +10,19 @@ const Login = () => {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
     
-    // console.log(loggedIn, setLoggedIn)
+    const navigate = useNavigate();
+    
 async function sendUserLogin(username, password) {
 
     try{
         const result = await postUserLogin(username, password);
-        console.log(result)
+        console.log(result);
 
         setUsername('')
         setPassword('')
         setLoggedIn(result.data.token)
-        window.localStorage.setItem ("userToken", result.data.token  )
-        // look up use navigate -----return redirect("/home")
+        window.localStorage.setItem ("userToken", result.data.token )
+        navigate("/home");
     } catch(error) {
         console.log(error)
 }

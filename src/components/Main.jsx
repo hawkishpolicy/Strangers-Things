@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from "react";
-import { Navbar, Footer, PostsLists, Login } from "./";
+import { Navbar, Footer, PostsLists } from "./";
 import { getSrcInfo } from "../API-Adapter"
 
 const Main = () => {

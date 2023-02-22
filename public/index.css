@@ -39,6 +39,17 @@ body {
   font-size: x-large;
   font-weight: bold;
 }
+
+#logoutLink {
+  text-decoration: underline;
+  color: white;
+  font-size: x-large;
+  font-weight: bold;
+}
+
+
+
+
 #LoginPage {
   display: flex;
   flex-direction: row;
@@ -107,4 +118,9 @@ body {
   align-items: center;
   gap: 15px;
   text-decoration: underline;
+}
+.welcomeUser{
+  border-bottom: solid black 2px;
+  text-align: center;
+  padding-bottom: 20px;
 }

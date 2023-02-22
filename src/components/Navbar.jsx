@@ -2,15 +2,19 @@ import React from "react";
 // import Login from "./Login";
 // import Home from "./Home";
 
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useAppContext } from "./AppProvider";
 
 const Navbar = (props) => {
+  const navigate = useNavigate();
   const {loggedIn, setLoggedIn} = useAppContext() 
+
   const Logout = () => {
-    setLoggedIn(false)
-    window.localStorage.removeItem("userToken")
+    setLoggedIn(false);
+    window.localStorage.removeItem("userToken");
+    navigate("/"); //this maybe goes in the onclick func below??
   }
+
   return (
     <div id="navbar">
     <div>
@@ -23,10 +27,14 @@ const Navbar = (props) => {
     </form>
     </div>
     <div id="navBar">
-      <Link id={"homeLink"} to={'/Home'}>Home</Link>
+      
       {/* <Link id={"postsLink"} to={'/PostsLists'}>Posts</Link> */}
-      {loggedIn ? <Link id={"logoutLink"} onClick= {Logout} >Log Out</Link> : 
-        <Link id={"loginLink"} to={`/login`}>Login</Link> 
+      {loggedIn ? 
+      <>
+        <Link id={"homeLink"} to={'/Home'}>Home</Link> 
+        <Link id={"logoutLink"} onClick= {Logout} >Log Out</Link> 
+      </>
+      : <Link id={"loginLink"} to={`/login`}>Login</Link> 
       }
     </div>
     </div>
