@@ -3,8 +3,14 @@ import React from "react";
 // import Home from "./Home";
 
 import { Link } from "react-router-dom";
+import { useAppContext } from "./AppProvider";
 
 const Navbar = (props) => {
+  const {loggedIn, setLoggedIn} = useAppContext() 
+  const Logout = () => {
+    setLoggedIn(false)
+    window.localStorage.removeItem("userToken")
+  }
   return (
     <div id="navbar">
     <div>
@@ -19,7 +25,7 @@ const Navbar = (props) => {
     <div id="navBar">
       <Link id={"homeLink"} to={'/Home'}>Home</Link>
       {/* <Link id={"postsLink"} to={'/PostsLists'}>Posts</Link> */}
-      {props.loggedIn ? <Link id={"logoutLink"}>Log Out</Link> : 
+      {loggedIn ? <Link id={"logoutLink"} onClick= {Logout} >Log Out</Link> : 
         <Link id={"loginLink"} to={`/login`}>Login</Link> 
       }
     </div>
@@ -27,4 +33,4 @@ const Navbar = (props) => {
   );
 };
 
-export default Navbar;
+export default Navbar;``

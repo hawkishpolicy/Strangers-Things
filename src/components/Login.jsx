@@ -1,14 +1,18 @@
 import React, { useState} from "react";
-import { Link } from "react-router-dom";
+import { Link, redirect } from "react-router-dom";
 import { postUserLogin } from "../API-Adapter";
+import { useAppContext } from "./AppProvider";
+
 
 
 const Login = () => {
-
+    const {loggedIn, setLoggedIn} = useAppContext() 
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
-
+    
+    // console.log(loggedIn, setLoggedIn)
 async function sendUserLogin(username, password) {
+
     try{
         const result = await postUserLogin(username, password);
         console.log(result)
@@ -16,20 +20,24 @@ async function sendUserLogin(username, password) {
         setUsername('')
         setPassword('')
         setLoggedIn(result.data.token)
+        window.localStorage.setItem ("userToken", result.data.token  )
+        // look up use navigate -----return redirect("/home")
     } catch(error) {
         console.log(error)
-    }
 }
-
+}
     return (
 
         <div id="LoginPage">
 
         
         <form id="LoginCard"
-            onSubmit={(event) => {
+            onSubmit={async (event) => {
                 event.preventDefault();
-                sendUserLogin(username, password)
+                await sendUserLogin(username, password)
+            
+                    
+                
 
             }}>
             <input

@@ -7,8 +7,8 @@ const PostsLists = (props) => {
             {
                 posts.map((post, idx) =>{
                     return(
-                        <div>
-                        <h2 key={idx} className = "title">
+                        <div key={idx} >
+                        <h2 className = "title">
                            {post.title}
                         </h2>
                         <ul>

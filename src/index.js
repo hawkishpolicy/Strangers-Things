@@ -14,6 +14,7 @@ import {
   createRoutesFromElements,
   Route,
 } from "react-router-dom";
+import AppProvider, { AppContext } from "./components/AppProvider";
 
 const container = document.getElementById("app");
 const root = ReactDOM.createRoot(container);
@@ -32,4 +33,8 @@ const router = createBrowserRouter(
   )
 );
 
-root.render(<RouterProvider router={router} />);
+root.render(
+  <AppProvider>
+    <RouterProvider router={router} />
+  </AppProvider>
+);
