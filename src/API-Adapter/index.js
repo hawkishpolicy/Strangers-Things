@@ -116,3 +116,25 @@ export const deletePost = async (id) => {
     console.error(error);
   }
 };
+
+export const sendMessage = async (content, id) => {
+    try{
+        const response = await fetch(`${srcInfo}/posts/${id}/messages`,{
+            method: "POST",
+            headers: {
+                "content-type": "application/json",
+                Authorization: `BEARER ${localStorage.getItem("userToken")}`
+            },
+            body: JSON.stringify({
+              message: {
+                content: content
+              },
+            }),
+        })
+        const result = await response.json()
+        console.log(result)
+        return result
+    }catch(error){
+        console.error(error)
+    }
+}
