@@ -60,43 +60,59 @@ export const postUserLogin = async (username, password) => {
 };
 
 export const getUserPosts = async () => {
-    try{
-        const response = await fetch(`${srcInfo}/users/me`, {
-            method: "GET",
-            headers: {
-                "Content-Type": "application/json",
-                Authorization: `Bearer ${localStorage.getItem("userToken")}`
-            }
-        })
-        const result = await response.json()
-        console.log(result)
-        return result
-    }catch(error){
-        console.error(error)
-    }
-}
+  try {
+    const response = await fetch(`${srcInfo}/users/me`, {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${localStorage.getItem("userToken")}`,
+      },
+    });
+    const result = await response.json();
+    console.log(result);
+    return result;
+  } catch (error) {
+    console.error(error);
+  }
+};
 
 export const addPost = async (title, description, price) => {
-    try{
-        const response = await fetch(`${srcInfo}/posts`, {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-                Authorization: `Bearer ${localStorage.getItem("userToken")}`
-            },
-            body: JSON.stringify({
-                post: {
-                    title: title,
-                    description: description,
-                    price: price,
-                }
-            })
-        })
-        console.log(title,description,price)
-        const result = await response.json()
-        console.log(result)
-        return result
-    }catch(error){
-        console.error(error)
-    }
-}
+  try {
+    const response = await fetch(`${srcInfo}/posts`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${localStorage.getItem("userToken")}`,
+      },
+      body: JSON.stringify({
+        post: {
+          title: title,
+          description: description,
+          price: price,
+        },
+      }),
+    });
+    console.log(title, description, price);
+    const result = await response.json();
+    console.log(result);
+    return result;
+  } catch (error) {
+    console.error(error);
+  }
+};
+
+export const deletePost = async (id) => {
+  try {
+    const response = await fetch(`${srcInfo}/posts/id`, {
+      method: "DELETE",
+      headers: {
+        "content-type": "application/json",
+        Authorization: `BEARER ${localStorage.getItem("userToken")}`,
+      },
+    });
+    const result = await response.json();
+    return result;
+  } catch (error) {
+    console.error(error);
+  }
+};

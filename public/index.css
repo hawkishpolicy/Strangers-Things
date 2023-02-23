@@ -40,8 +40,8 @@ body {
   font-weight: bold;
 }
 
-#logoutLink { 
-  font-family:'Times New Roman', Times, serif;
+#logoutLink {
+  font-family: "Times New Roman", Times, serif;
   text-decoration: underline;
   color: white;
   background-color: black;
@@ -50,8 +50,12 @@ body {
   font-weight: bold;
 }
 
-
-
+#postFormLink {
+  text-decoration: underline;
+  color: white;
+  font-size: x-large;
+  font-weight: bold;
+}
 
 #LoginPage {
   display: flex;
@@ -122,7 +126,7 @@ body {
   gap: 15px;
   text-decoration: underline;
 }
-.welcomeUser{
+.welcomeUser {
   border-bottom: solid black 2px;
   text-align: center;
   padding-bottom: 20px;
