@@ -103,7 +103,7 @@ export const addPost = async (title, description, price) => {
 
 export const deletePost = async (id) => {
   try {
-    const response = await fetch(`${srcInfo}/posts/id`, {
+    const response = await fetch(`${srcInfo}/posts/${id}`, {
       method: "DELETE",
       headers: {
         "content-type": "application/json",

@@ -7,9 +7,11 @@ const Home =() => {
 
     const [posts, setPosts] = useState([]);
 
+
+
     const getPosts = async () =>{
         const allPosts = await getUserPosts();
-        // console.log(allPosts.data.posts)
+        console.log(allPosts)
         setPosts(allPosts.data.posts);
     }
 
@@ -24,7 +26,7 @@ const Home =() => {
         <div id="homePage">
             <Navbar />
             <h1 className="welcomeUser">Welcome User!</h1>
-            <PostsLists posts = {posts}/>
+            <PostsLists posts = {posts} setPosts = {setPosts}/>
             <Footer />
 
         </div>

@@ -33,6 +33,13 @@ body {
   font-weight: bold;
 }
 
+#allPostsLink{
+  text-decoration: underline;
+  color: white;
+  font-size: x-large;
+  font-weight: bold;
+}
+
 #loginLink {
   text-decoration: underline;
   color: white;

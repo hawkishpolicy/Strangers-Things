@@ -12,7 +12,7 @@ const Navbar = (props) => {
   const Logout = () => {
     setLoggedIn(false);
     window.localStorage.removeItem("userToken");
-    navigate("/"); //this maybe goes in the onclick func below??
+    navigate("/");
   }
 
   return (
@@ -28,10 +28,10 @@ const Navbar = (props) => {
     </div>
     <div id="navBar">
       
-      {/* <Link id={"postsLink"} to={'/PostsLists'}>Posts</Link> */}
       {loggedIn ? 
       <>
         <Link id={"homeLink"} to={'/Home'}>Home</Link> 
+        <Link id={"allPostsLink"} to={'/'}>All Posts</Link>      {/* just created this so we could go back to all posts easily */}
         <Link id={"postFormLink"} to={'/CreatePost'}>Create Post</Link> 
         <button id={"logoutLink"} onClick= {Logout} >Log Out</button> 
       </>
@@ -42,4 +42,4 @@ const Navbar = (props) => {
   );
 };
 
-export default Navbar;``
+export default Navbar;

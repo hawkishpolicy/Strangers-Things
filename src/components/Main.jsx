@@ -11,18 +11,6 @@ const Main = () => {
         setPosts(allPosts);
     }
 
-    // const deletePostfromList = async(id) => {
-    //     let currentPosts = posts
-
-    //     try{
-    //         await deletePost (id)
-    //         currentPosts.splice(idx, 1)
-    //         setPosts(currentPosts)
-    //     } catch (error) {
-    //         console.error(error);
-    //     }
-    // }
-
     useEffect(()=>{
         getPosts();
     }, [])
@@ -38,6 +26,5 @@ const Main = () => {
     )
 }
 
-//loggedIn={loggedIn} setLoggedIn={setLoggedIn}
 
 export default Main
