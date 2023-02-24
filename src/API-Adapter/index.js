@@ -2,7 +2,11 @@ const srcInfo = "https://strangers-things.herokuapp.com/api/2301-ftb-et-web-ft";
 
 export const getSrcInfo = async () => {
   try {
-    const response = await fetch(`${srcInfo}/posts`);
+    const response = await fetch(`${srcInfo}/posts`, {
+      headers: {
+        Authorization: `Bearer ${localStorage.getItem("userToken")}`
+      }
+    });
     const result = await response.json();
     const postArray = result.data.posts;
 
