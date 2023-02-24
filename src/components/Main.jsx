@@ -19,7 +19,7 @@ const Main = () => {
     return(
         <div id="main">
             
-            <Navbar  searchString = {searchString} setSearchString = {setSearchString} posts={posts}/>
+            <Navbar  searchString = {searchString} setSearchString = {setSearchString}/>
             <PostsLists posts = {posts} setPosts = {setPosts} searchString = {searchString} />
             <Footer />
         

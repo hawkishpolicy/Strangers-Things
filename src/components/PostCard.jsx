@@ -55,8 +55,8 @@ return (
         post.messages.map((message, idx)=>{                     
             return(
                     <div key = {idx} id = "messages">
-                        <h5 id = "messageFrom">Message From User: {message.fromUser.username}</h5>
-                        <h4 id = "messageContent">{message.content}</h4>
+                        <h4 id = "messageFrom">From User: {message.fromUser.username}</h4>
+                        <h5 id = "messageContent">{message.content}</h5>
                     </div>
             )}
         )

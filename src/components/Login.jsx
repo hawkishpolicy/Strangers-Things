@@ -22,6 +22,7 @@ async function sendUserLogin(username, password) {
         setPassword('')
         setLoggedIn(result.data.token)
         window.localStorage.setItem ("userToken", result.data.token )
+        window.localStorage.setItem ("userName", username)
         navigate("/home");
     } catch(error) {
         console.log(error)
