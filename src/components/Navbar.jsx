@@ -1,13 +1,12 @@
 import React from "react";
-// import Login from "./Login";
-// import Home from "./Home";
-
 import { Link, useNavigate } from "react-router-dom";
 import { useAppContext } from "./AppProvider";
 
 const Navbar = (props) => {
   const navigate = useNavigate();
-  const {loggedIn, setLoggedIn} = useAppContext() 
+  const {loggedIn, setLoggedIn} = useAppContext()
+  const setSearchString = props.setSearchString
+  const searchString = props.searchString
 
   const Logout = () => {
     setLoggedIn(false);
@@ -20,10 +19,23 @@ const Navbar = (props) => {
     <div>
       <form>
       <input 
-      id={"searchBar"}
+      id={"searchBarInput"}
       type={'text'}
       placeholder={"Search Here"}></input>
-    <button>Enter</button>
+    <button type = "submit" onClick={() => {
+      event.preventDefault()
+      setSearchString(document.getElementById("searchBarInput").value)
+      document.getElementById("searchBarInput").value="";
+    }
+    } id="searchBarButton">Enter</button>
+    <button
+        onClick={() => {
+          setSearchString("");
+        }}
+        id="searchBarButton"
+      >
+        RESET
+      </button>
     </form>
     </div>
     <div id="navBar">

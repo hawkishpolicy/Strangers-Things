@@ -6,6 +6,8 @@ import { getUserPosts, deletePost } from "../API-Adapter";
 const Home =() => {
 
     const [posts, setPosts] = useState([]);
+    const [searchString, setSearchString] = useState("");
+
 
 
 
@@ -37,10 +39,9 @@ const Home =() => {
 
     return (
         <div id="homePage">
-            <Navbar />
+            <Navbar searchString = {searchString} setSearchString = {setSearchString}/>
             <h1 className="welcomeUser">Welcome User!</h1>
-            {/* <PostsLists posts={posts} setPosts={setPosts}/> */}
-            <PostsLists posts={posts} setPosts={setPosts}/>
+            <PostsLists posts={posts} setPosts={setPosts} searchString = {searchString}/>
             <Footer />
 
         </div>

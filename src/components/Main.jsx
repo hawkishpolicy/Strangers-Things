@@ -5,6 +5,7 @@ import { getSrcInfo, deletePost } from "../API-Adapter"
 
 const Main = () => {
     const [posts, setPosts] = useState([]);
+    const [searchString, setSearchString] = useState("");
 
     const getPosts = async () =>{
         const allPosts = await getSrcInfo();
@@ -18,8 +19,8 @@ const Main = () => {
     return(
         <div id="main">
             
-            <Navbar  />
-            <PostsLists posts = {posts} setPosts = {setPosts} />
+            <Navbar  searchString = {searchString} setSearchString = {setSearchString}/>
+            <PostsLists posts = {posts} setPosts = {setPosts} searchString = {searchString} />
             <Footer />
         
         </div>

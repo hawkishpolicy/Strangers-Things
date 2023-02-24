@@ -4,8 +4,8 @@ export const getSrcInfo = async () => {
   try {
     const response = await fetch(`${srcInfo}/posts`, {
       headers: {
-        Authorization: `Bearer ${localStorage.getItem("userToken")}`
-      }
+        Authorization: `Bearer ${localStorage.getItem("userToken")}`,
+      },
     });
     const result = await response.json();
     const postArray = result.data.posts;
@@ -122,23 +122,23 @@ export const deletePost = async (id) => {
 };
 
 export const sendMessage = async (content, id) => {
-    try{
-        const response = await fetch(`${srcInfo}/posts/${id}/messages`,{
-            method: "POST",
-            headers: {
-                "content-type": "application/json",
-                Authorization: `BEARER ${localStorage.getItem("userToken")}`
-            },
-            body: JSON.stringify({
-              message: {
-                content: content
-              },
-            }),
-        })
-        const result = await response.json()
-        console.log(result)
-        return result
-    }catch(error){
-        console.error(error)
-    }
-}
+  try {
+    const response = await fetch(`${srcInfo}/posts/${id}/messages`, {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+        Authorization: `BEARER ${localStorage.getItem("userToken")}`,
+      },
+      body: JSON.stringify({
+        message: {
+          content: content,
+        },
+      }),
+    });
+    const result = await response.json();
+    console.log(result);
+    return result;
+  } catch (error) {
+    console.error(error);
+  }
+};
