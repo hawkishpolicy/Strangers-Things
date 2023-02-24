@@ -8,6 +8,7 @@ import {
   PasswordReset,
   PostForm,
   Home,
+  MessageView,
 } from "./components";
 import {
   createBrowserRouter,
@@ -31,6 +32,7 @@ const router = createBrowserRouter(
       <Route path="/PostsLists" element={<PostsLists />} />
       <Route path="/CreatePost" element={<PostForm />} />
       <Route path="/home" element={<Home />} />
+      <Route path="/messages" element={<MessageView />} />
       
     </>
   )

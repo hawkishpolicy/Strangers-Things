@@ -10,3 +10,4 @@ export { default as AppProvider } from "./AppProvider";
 export { default as PostForm } from "./PostForm";
 export { default as MessageForm } from "./MessageForm";
 export { default as PostCard } from "./PostCard";
+export { default as MessageView } from "./MessageView";

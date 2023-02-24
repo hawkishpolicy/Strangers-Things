@@ -45,6 +45,7 @@ const Navbar = (props) => {
         <Link id={"homeLink"} to={'/home'}>Home</Link> 
         <Link id={"allPostsLink"} to={'/'}>All Posts</Link>      {/* just created this so we could go back to all posts easily */}
         <Link id={"postFormLink"} to={'/CreatePost'}>Create Post</Link> 
+        <Link id={"messageView"} to={'/messages'} posts={props.posts}>Sent Messages</Link> 
         <button id={"logoutLink"} onClick= {Logout} >Log Out</button> 
       </>
       : <Link id={"loginLink"} to={`/login`}>Login</Link> 

@@ -2,7 +2,7 @@ import React from "react"
 import { sendMessage } from "../API-Adapter"
 
 const MessageForm = (props) => {
-    // console.log(props.idx)
+    console.log(props.idx)
     return(
         <>
             <form id="sendMessage" onSubmit={async (event)=>{
