@@ -37,16 +37,18 @@ const PostsLists = (props) => {
         <div id="all-posts">
             {!searchString   
                 ? posts.map((post, idx) =>{
+                    
                     if(post.active){
-                    return <PostCard key = {idx} post = {post} posts ={posts} setPosts ={setPosts} />;
+                        return <PostCard key = {idx} post = {post} posts ={posts} setPosts ={setPosts} />;
                     }})
                     : posts.map((post) => {
+                        let titleLowerCase= post.title.toLowerCase()
                         if (post.title.toLowerCase() === searchString.toLowerCase() && post.active) {
                             return (
                                 <div id="searchedPostDisplay">
                                     <PostCard key = {"searchMap"+post.id} post={post} posts ={posts} setPosts ={setPosts} />;
                                 </div>)
-                        } else if (post.title.toLowerCase()[0] === searchString.toLowerCase()[0] && post.active) {
+                        } else if (titleLowerCase.includes(searchString.toLowerCase()) && post.active) {
                             return(
                                 <div id="searchedPostDisplay">
                                     <PostCard post = {post} posts ={posts} setPosts ={setPosts}/>
