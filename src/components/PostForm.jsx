@@ -1,11 +1,14 @@
 import React from "react"
 import { addPost } from "../API-Adapter"
 import { Link, Navigate, useNavigate } from "react-router-dom"
+import Navbar from "./Navbar"
 
 const postForm = () => {
     const navigate = useNavigate()
     return(
         <>
+            <Navbar/>
+        <div id="submitPostPage">
             <form id="submitPost" onSubmit={async (event)=>{
                 event.preventDefault()
                 // await submitNewPost()
@@ -16,9 +19,10 @@ const postForm = () => {
                 <input id="postDesc" placeholder="Description"></input>
                 <input id="postPrice" placeholder="Price"></input>
                 <button type="submit">Submit</button>
+            <Link id={"goBackFromPostForm"} to={`/home`}><button>Go Back</button></Link>
             </form>
-            <Link id={"goBackFromPostForm"} to={`/home`}>Go Back</Link>
-        </>
+        </div>
+    </>
     )
 }
 

@@ -33,7 +33,7 @@ body {
   font-weight: bold;
 }
 
-#allPostsLink{
+#allPostsLink {
   text-decoration: underline;
   color: white;
   font-size: x-large;
@@ -62,6 +62,24 @@ body {
   color: white;
   font-size: x-large;
   font-weight: bold;
+}
+#submitPostPage {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 50px;
+}
+#submitPost {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  border: solid 2px black;
+  width: 500px;
+  align-content: center;
+  align-items: center;
+  padding: 20px;
+  border-radius: 10px;
+  gap: 10px;
 }
 
 #LoginPage {
