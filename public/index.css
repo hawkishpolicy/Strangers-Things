@@ -1,19 +1,20 @@
 body {
   margin: 0;
   font-family: "Tilt Neon";
+  background-color: #f2f2f2;
 }
 
 #navbar {
-  background-color: black;
+  background-color: #455559;
   color: white;
   display: flex;
   align-items: center;
   flex-grow: 1;
   max-height: 10%;
-  min-height: 40px;
+  min-height: 50px;
   justify-content: space-between;
-  padding-left: 10px;
-  padding-right: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 #navBar {
   display: flex;
@@ -54,7 +55,7 @@ body {
   font-family: "Tilt Neon";
   text-decoration: underline;
   color: white;
-  background-color: black;
+  background-color: #455559;
   border: none;
   font-size: x-large;
   font-weight: bold;
@@ -76,12 +77,21 @@ body {
   font-weight: bold;
 }
 #postCard {
-  border: solid 1px black;
+  /* border: solid 1px black; */
   border-radius: 10px;
-  margin: 10px;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-bottom: 25px;
   padding-bottom: 20px;
+  padding-top: 20px;
   padding-left: 10px;
   padding-right: 10px;
+  background-color: white;
+  box-shadow: 5px 5px 20px;
+}
+
+.title {
+  margin-block-start: 0px;
 }
 ul {
   padding-inline-start: 5px;
@@ -105,13 +115,15 @@ li {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-  border: solid 2px black;
+  /* border: solid 2px black; */
   width: 500px;
   align-content: center;
   align-items: center;
   padding: 20px;
   border-radius: 10px;
   gap: 10px;
+  background-color: white;
+  box-shadow: 10px 10px 30px;
 }
 
 #postName {
@@ -133,12 +145,14 @@ li {
 }
 
 #messageViewCard {
-  border: solid 1px black;
+  /* border: solid 1px black; */
   margin-bottom: 20px;
   border-radius: 10px;
   padding: 10px;
-  margin-left: 20px;
-  margin-right: 20px;
+  margin-left: 40px;
+  margin-right: 40px;
+  background-color: #bcc5ce;
+  /* box-shadow: 5px 5px 20px; */
 }
 #messageFrom {
   margin-block-start: 0px;
@@ -164,19 +178,21 @@ li {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-  border: solid 2px black;
+  /* border: solid 2px black; */
   width: 500px;
   align-content: center;
   align-items: center;
   padding: 20px;
   border-radius: 10px;
   gap: 10px;
+  background-color: white;
+  box-shadow: 10px 10px 30px;
 }
 
 #registerPage {
   display: flex;
-  flex-direction: row;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
   margin-top: 50px;
 }
 
@@ -188,19 +204,21 @@ li {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-  border: solid 2px black;
+  /* border: solid 2px black; */
   width: 500px;
   align-content: center;
   align-items: center;
   padding: 20px;
   border-radius: 10px;
   gap: 10px;
+  box-shadow: 10px 10px 30px;
+  background-color: white;
 }
 
 #resetPage {
   display: flex;
-  flex-direction: row;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
   margin-top: 50px;
 }
 #passwordResetTitle {
@@ -210,17 +228,19 @@ li {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-  border: solid 2px black;
+  /* border: solid 2px black; */
   width: 500px;
   align-content: center;
   align-items: center;
   padding: 20px;
   border-radius: 10px;
   gap: 10px;
+  background-color: white;
+  box-shadow: 10px 10px 30px;
 }
 
 #footer {
-  background-color: black;
+  background-color: #28403d;
   color: white;
   display: flex;
   flex-direction: row;
@@ -230,7 +250,7 @@ li {
   gap: 15px;
   text-decoration: underline;
 }
-.welcomeUser {
+#welcomeUser {
   border-bottom: solid black 2px;
   text-align: center;
   padding-bottom: 20px;

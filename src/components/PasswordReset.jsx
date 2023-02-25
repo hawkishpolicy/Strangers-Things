@@ -1,5 +1,5 @@
 import React from "react"
-import { Navbar} from "./"
+import { Navbar, Footer} from "./"
 
 const passwordReset = () => {
     return (
@@ -28,6 +28,7 @@ const passwordReset = () => {
         
             </form>
         </div>
+    
         </>
     )
 }

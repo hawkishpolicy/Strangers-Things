@@ -40,7 +40,7 @@ const Home =() => {
     return (
         <div id="homePage">
             <Navbar searchString = {searchString} setSearchString = {setSearchString}/>
-            <h1 className="welcomeUser">Welcome User!</h1>
+            <h1 id="welcomeUser">Welcome User!</h1>
             <PostsLists posts={posts} setPosts={setPosts} searchString = {searchString}/>
             <Footer />
 

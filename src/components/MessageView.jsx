@@ -29,8 +29,8 @@ const MessageView = () => {
                         <h3>
                             To: {message.post.author.username}
                         </h3>
-                        <p>Subject: {message.post.title} </p>
-                        <p> Body: {message.content} </p>
+                        <p id="messageFrom">Subject: {message.post.title} </p>
+                        <p id="messageContent"> Body: {message.content} </p>
                     </div>
                     )
                 }
