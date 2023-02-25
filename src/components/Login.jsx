@@ -2,6 +2,7 @@ import React, { useState} from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { postUserLogin } from "../API-Adapter";
 import { useAppContext } from "./AppProvider";
+import Navbar from "./Navbar";
 
 
 
@@ -29,8 +30,11 @@ async function sendUserLogin(username, password) {
 }
 }
     return (
-
+<>
+            <Navbar/>
+            <h1 id="loginTitle">Login Please!</h1>
         <div id="LoginPage">
+            
 
         
         <form id="LoginCard"
@@ -76,6 +80,7 @@ async function sendUserLogin(username, password) {
 
         </form>
     </div>
+    </>
     )
 
 }

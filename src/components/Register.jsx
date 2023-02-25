@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { postUserInfo } from "../API-Adapter";
 import { useNavigate } from "react-router-dom";
+import { Navbar } from "../components"
 
 const Register = () => {
     const[username, setUsername] = useState("");
@@ -29,6 +30,9 @@ const Register = () => {
 
 
     return(
+        <>
+        <Navbar/>
+        <h1 id="registerTitle">Register Please!</h1>
         <div id="registerPage">
         
             <form id="registerCard" 
@@ -73,6 +77,7 @@ const Register = () => {
             </form>
 
         </div>
+        </>
     )
 }
 

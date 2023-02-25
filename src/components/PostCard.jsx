@@ -30,33 +30,34 @@ const postCard = (props) => {
 
 return (
 
-    <div key={idx} >
+    <div> 
+    <div id="postCard" key={idx} >
                                 
         <h2 className = "title">
             {post.title}
         </h2>
         <ul>
-            <li>{post.description}</li>
-            <li>{post.location}</li>
-            <li>{post.price}</li>
+            <li>Description:    {post.description}</li>
+            <li>Location:   {post.location}</li>
+            <li>Price:  {post.price}</li>
         </ul>
 
         { post.isAuthor === true && loggedIn || window.location.pathname.toLowerCase() === "/home" ? 
         //did this bc isAuthor is undefined on home pg. but it is safe to assume bc of our function for users/me that all posts that appear in home are made by user.
             <button id={"deleteButton"} onClick= {() => deletePostFromList(post._id, idx)}>Delete</button> 
         : null}
-
         { post.isAuthor === false && loggedIn ?
             <MessageForm post={post} idx={idx}/> 
-        :null
+            :null
         }
+        </div>
 
         {
         post.messages.map((message, idx)=>{                     
             return(
-                    <div key = {idx} id = "messages">
-                        <h4 id = "messageFrom">From User: {message.fromUser.username}</h4>
-                        <h5 id = "messageContent">{message.content}</h5>
+                    <div id="messageViewCard" key = {idx}>
+                        <p id = "messageFrom">From: {message.fromUser.username}</p>
+                        <p id = "messageContent">Body: {message.content}</p>
                     </div>
             )}
         )

@@ -9,6 +9,7 @@ const postForm = () => {
         <>
             <Navbar/>
         <div id="submitPostPage">
+            <h1 id="createPostTitle">Create Post</h1>
             <form id="submitPost" onSubmit={async (event)=>{
                 event.preventDefault()
                 // await submitNewPost()

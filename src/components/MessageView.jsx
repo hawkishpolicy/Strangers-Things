@@ -25,12 +25,12 @@ const MessageView = () => {
             { messages.map((message, idx)=>{
                 if(message.fromUser.username === localStorage.getItem("userName")){ //checks the username stored in local storage (i did this in login component @ same time as token)
                     return(
-                    <div key = {idx}>
-                        <h2>
-                            Message to: {message.post.author.username}
-                        </h2>
-                        <h4>About: {message.post.title} </h4>
-                        <p> "{message.content}" </p>
+                    <div id="messageViewCard" key = {idx}>
+                        <h3>
+                            To: {message.post.author.username}
+                        </h3>
+                        <p>Subject: {message.post.title} </p>
+                        <p> Body: {message.content} </p>
                     </div>
                     )
                 }

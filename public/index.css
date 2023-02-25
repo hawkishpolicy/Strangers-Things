@@ -1,5 +1,6 @@
 body {
   margin: 0;
+  font-family: "Tilt Neon";
 }
 
 #navbar {
@@ -11,6 +12,8 @@ body {
   max-height: 10%;
   min-height: 40px;
   justify-content: space-between;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 #navBar {
   display: flex;
@@ -48,13 +51,15 @@ body {
 }
 
 #logoutLink {
-  font-family: "Times New Roman", Times, serif;
+  font-family: "Tilt Neon";
   text-decoration: underline;
   color: white;
   background-color: black;
   border: none;
   font-size: x-large;
   font-weight: bold;
+  margin-left: 0px;
+  padding: 0px;
 }
 
 #postFormLink {
@@ -63,11 +68,38 @@ body {
   font-size: x-large;
   font-weight: bold;
 }
+
+#messageViewLink {
+  text-decoration: underline;
+  color: white;
+  font-size: x-large;
+  font-weight: bold;
+}
+#postCard {
+  border: solid 1px black;
+  border-radius: 10px;
+  margin: 10px;
+  padding-bottom: 20px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+ul {
+  padding-inline-start: 5px;
+}
+li {
+  list-style-type: none;
+  padding-left: 10px;
+  margin-top: 10px;
+}
 #submitPostPage {
   display: flex;
-  flex-direction: row;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
   margin-top: 50px;
+}
+#createPostTitle {
+  display: flex;
+  flex-direction: column;
 }
 #submitPost {
   display: flex;
@@ -82,11 +114,51 @@ body {
   gap: 10px;
 }
 
+#postName {
+  width: 400px;
+}
+
+#postDesc {
+  width: 400px;
+  height: 50px;
+}
+
+#postPrice {
+  width: 400px;
+}
+#yourMessagesHeader {
+  text-align: center;
+  border-bottom: solid 2px black;
+  padding-bottom: 20px;
+}
+
+#messageViewCard {
+  border: solid 1px black;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  padding: 10px;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+#messageFrom {
+  margin-block-start: 0px;
+  margin-block-end: 0px;
+  margin-bottom: 5px;
+}
+
+#messageContent {
+  margin-block-start: 0px;
+  margin-block-end: 0px;
+}
 #LoginPage {
   display: flex;
   flex-direction: row;
   justify-content: center;
   margin-top: 50px;
+}
+
+#loginTitle {
+  text-align: center;
 }
 #LoginCard {
   display: flex;
@@ -108,6 +180,10 @@ body {
   margin-top: 50px;
 }
 
+#registerTitle {
+  text-align: center;
+}
+
 #registerCard {
   display: flex;
   flex-direction: column;
@@ -126,6 +202,9 @@ body {
   flex-direction: row;
   justify-content: center;
   margin-top: 50px;
+}
+#passwordResetTitle {
+  text-align: center;
 }
 #resetCard {
   display: flex;
@@ -155,4 +234,14 @@ body {
   border-bottom: solid black 2px;
   text-align: center;
   padding-bottom: 20px;
+}
+
+button {
+  margin-left: 10px;
+  font-family: "Tilt Neon";
+}
+
+#deleteButton {
+  margin-left: 0px;
+  font-family: "Tilt Neon";
 }

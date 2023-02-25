@@ -20,6 +20,7 @@ const Main = () => {
         <div id="main">
             
             <Navbar  searchString = {searchString} setSearchString = {setSearchString}/>
+            <h1 className="welcomeUser">Welcome Stranger!</h1>
             <PostsLists posts = {posts} setPosts = {setPosts} searchString = {searchString} />
             <Footer />
         

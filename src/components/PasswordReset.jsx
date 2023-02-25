@@ -1,7 +1,11 @@
 import React from "react"
+import { Navbar} from "./"
 
 const passwordReset = () => {
     return (
+        <>
+        <Navbar/>
+        <h1 id="passwordResetTitle">Password Reset</h1>
         <div id="resetPage">
             <form id="resetCard">
             <input
@@ -24,6 +28,7 @@ const passwordReset = () => {
         
             </form>
         </div>
+        </>
     )
 }
 
