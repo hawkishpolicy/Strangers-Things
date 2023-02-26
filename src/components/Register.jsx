@@ -63,7 +63,7 @@ const Register = () => {
             }}
           ></input>
 
-          <button id={"loginButton"} type="submit">
+          <button id={"cardButton"} type="submit">
             Enter
           </button>
         </form>

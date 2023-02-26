@@ -40,7 +40,6 @@ const PostsLists = (props) => {
                     setPosts={setPosts}
                     idx={idx}
                   />
-                  ;
                 </div>
               );
             } else if (

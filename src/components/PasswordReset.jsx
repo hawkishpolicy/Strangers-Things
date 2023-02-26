@@ -15,7 +15,7 @@ const passwordReset = () => {
             required
           ></input>
 
-          <p>or</p>
+          <p id="resetCardOr">or</p>
 
           <input
             id={"userEmail"}
@@ -24,7 +24,7 @@ const passwordReset = () => {
             min={"8"}
             required
           ></input>
-          <button>Enter</button>
+          <button id= "cardButton">Enter</button>
         </form>
       </div>
     </>

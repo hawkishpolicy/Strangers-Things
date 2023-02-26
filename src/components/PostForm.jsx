@@ -22,10 +22,10 @@ const postForm = () => {
           <input id="postName" placeholder="Post Name"></input>
           <input id="postDesc" placeholder="Description"></input>
           <input id="postPrice" placeholder="Price"></input>
-          <button type="submit">Submit</button>
+          <button id="cardButton" type="submit">Submit</button>
 
           <Link id={"goBackFromPostForm"} to={`/home`}>
-            <button>Go Back</button>
+            <button id="cardButton">Go Back</button>
           </Link>
         </form>
       </div>

@@ -61,7 +61,7 @@ const Login = () => {
             }}
           ></input>
 
-          <button type="submit">Enter</button>
+          <button id="cardButton"type="submit">Enter</button>
 
           <h3>
             Forgot Password?
@@ -76,7 +76,7 @@ const Login = () => {
           <h3>
             New User?
             <span>
-              <Link id={"registerButton"} to={`/register`}>
+              <Link id={"cardButton"} to={`/register`}>
                 Register Here
               </Link>
             </span>
