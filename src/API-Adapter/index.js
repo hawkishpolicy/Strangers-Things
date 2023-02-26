@@ -30,7 +30,6 @@ export const postUserInfo = async (username, password) => {
         },
       }),
     });
-    console.log(username, password);
 
     const result = await response.json();
     return result;
@@ -54,7 +53,6 @@ export const postUserLogin = async (username, password) => {
         },
       }),
     });
-    console.log(username, password);
 
     const result = await response.json();
     return result;
@@ -73,7 +71,6 @@ export const getUserPosts = async () => {
       },
     });
     const result = await response.json();
-    console.log(result);
     return result;
   } catch (error) {
     console.error(error);
@@ -96,9 +93,7 @@ export const addPost = async (title, description, price) => {
         },
       }),
     });
-    console.log(title, description, price);
     const result = await response.json();
-    console.log(result);
     return result;
   } catch (error) {
     console.error(error);
@@ -136,7 +131,6 @@ export const sendMessage = async (content, id) => {
       }),
     });
     const result = await response.json();
-    console.log(result);
     return result;
   } catch (error) {
     console.error(error);

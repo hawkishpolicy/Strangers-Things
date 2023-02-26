@@ -18,7 +18,6 @@ import {
 } from "react-router-dom";
 import AppProvider, { AppContext } from "./components/AppProvider";
 
-
 const container = document.getElementById("app");
 const root = ReactDOM.createRoot(container);
 
@@ -33,7 +32,6 @@ const router = createBrowserRouter(
       <Route path="/CreatePost" element={<PostForm />} />
       <Route path="/home" element={<Home />} />
       <Route path="/messages" element={<MessageView />} />
-      
     </>
   )
 );

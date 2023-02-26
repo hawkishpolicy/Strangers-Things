@@ -12,12 +12,10 @@ export const useAppContext = () => {
 
 const AppProvider = ({ children }) => {
     const [loggedIn, setLoggedIn] = useState(false)
-    console.log("logging Logged IN",loggedIn)
 
     useEffect(()=> {
-        const foo = window.localStorage.getItem ("userToken")
-        console.log(foo)
-        setLoggedIn(foo)
+        const token = window.localStorage.getItem ("userToken")
+        setLoggedIn(token)
     }, [])
 
 
